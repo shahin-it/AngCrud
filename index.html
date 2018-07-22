@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head ng-init="appName='AngularJS CRUD Example'">
+  <meta charset="utf-8"/>
+  <title>{{appName}}</title>
+  <script src="vendor/jquery-3.3.1.min.js"></script>
+  <script src="vendor/angular-1.7.2.min.js"></script>
+  <script src="vendor/bootstrap.min.js"></script>
+  <script src="js/app.js"></script>
+  <link rel="stylesheet" href="vendor/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <header class="container">
+      <div class="banner">
+        <a href=""><img class="image img-fluid" src="image/banner.jpeg" width="100%" height="100px"></a>
+      </div>
+      <div class="global-info"></div>
+    </header>
+    <section id="body" class="row">
+      <div class="sidebar col-md-3">
+        <form class="bd-search d-flex align-items-center">
+          <input type="text" name="searchText" class="form-control input-search" placeholder="Search....">
+          <button class="btn btn-link d-md-none p-0 ml-3" onclick="$('.navigation').toggle()" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30" focusable="false">
+              <title>Menu</title>
+              <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"></path>
+            </svg>
+          </button>
+        </form>
+        <nav class="navigation">
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active">America</a>
+            <a href="#" class="list-group-item list-group-item-action">England</a>
+            <a href="#" class="list-group-item list-group-item-action">Bangladesh</a>
+            <a href="#" class="list-group-item list-group-item-action">Australia</a>
+            <a href="#" class="list-group-item list-group-item-action disabled">Rusia</a>
+          </div>
+        </nav>
+      </div>
+      <article class="col-md-9 sidebar">
+        <h3>Address Book</h3>
+        <form class="was-validate" action="#" ng-app="myApp" ng-controller="myCtrl">
+          <div class="form-group">
+            <label>Name</label>
+            <input class="form-control" placeholder="Type name" required="" type="text" ng-model="name">
+            <div class="invalid-feedback">That field is required</div>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input class="form-control" placeholder="Type phone number" type="text" ng-model="phoneNumber">
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <input class="form-control" placeholder="Type address" type="text" ng-model="address">
+          </div>
+          <div class="form-group">
+            <label></label>
+            <button class="submit-button btn btn-primary" type="button">Submit</button>
+          </div>
+        </form>
+        <div class="data-table">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+    <footer class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          <a href="#!">Terms of Service</a> | <a href="#!">Privacy</a>    
+        </div>
+        <div class="col-sm-4">
+          <p>© 2013 Company Name. All rights reserved</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+  </html>
